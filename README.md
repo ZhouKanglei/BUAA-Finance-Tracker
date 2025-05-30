@@ -1,6 +1,6 @@
 # 🎓 BUAA-Finance-Tracker：自动提醒你的财务到账信息
 
-> 🌟 一个送给努力的 BUAAer 的实用小工具
+> 🌟 送给每一个努力的 BUAAer
 
 作为一名即将从北航毕业的学子，我在这几年里陆续收到了不少劳务费、奖助学金等财务款项。每次到账，工行虽然会发短信提醒，但内容常常是这样：
 
@@ -24,7 +24,7 @@
 
 **BUAA-Finance-Tracker** 是一个基于 Selenium 的自动化脚本，支持定期登录北航财务系统，抓取最新到账记录，并通过邮件发送详细提醒。
 
-📌 项目开源地址：https://github.com/your-repo/BUAA-Finance-Tracker
+📌 项目开源地址：https://github.com/ZhouKanglei/BUAA-Finance-Tracker
 
 ---
 
@@ -43,7 +43,7 @@
 
 -   Python ≥ 3.8
     
--   Selenium
+-   Selenium（[参考博客](https://blog.csdn.net/qq_39098712/article/details/136512058 "selenium +Chrome driver环境配置")）
     
 -   Chrome 浏览器 + 对应版本的 Chrome WebDriver
     
@@ -89,9 +89,9 @@ source ~/anaconda3/etc/profile.d/conda.sh
 conda activate base
 ```
 
-### 4\. 配置定时运行（可选）
+### 4\. 配置定时运行（自动提醒）
 
-比如每天凌晨 2 点自动运行一次：
+例如，比如每天 8 点到 21 点期间每 1 小时自动运行一次：
 
 ```bash
 crontab -e
@@ -100,8 +100,10 @@ crontab -e
 添加：
 
 ```bash
-0 2 * * * /usr/bin/python3 /path/to/run_cwc_tracker.sh
+0 8-21/1 * * * bash /path/to/run_cwc_tracker.sh
 ```
+
+更多配置，参考[Linux crontab 命令](https://www.runoob.com/linux/linux-comm-crontab.html "Linux crontab 命令")。
 
 ---
 
